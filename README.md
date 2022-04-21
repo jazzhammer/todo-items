@@ -13,6 +13,7 @@ Create a simple `express`-based Node.js service to serve the needs of a basic TO
     1. `localhost:3001/api/:id` (`DELETE`) - remove an existing item
     1. For details on the format of each payload, please take a look within `frontend/src/functions`
 1. The resulting server code should demonstrate an understanding of clean code and microservice best-practices.
+1. Create a `Dockerfile` to containerize your service.
 1. Please provide a `README.md` in the `backend` folder with instructions for how to start your service.
 1. If you have questions, feel free to ask!
 
