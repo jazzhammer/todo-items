@@ -1,0 +1,6 @@
+# required by mongodb
+if [ ! -d ./data ]; then
+    mkdir -p data/db
+fi
+
+
