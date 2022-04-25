@@ -25,6 +25,7 @@ export default function makeTodoItemsDb(makeDb) {
     }
 
     async function insert(todoItem) {
+        todoItem.isComplete = false;
         const db = await makeDb();
         const inserted = await db.insertOne(todoItem);
         const one = await db.findOne({_id: inserted.insertedId});
@@ -38,8 +39,10 @@ export default function makeTodoItemsDb(makeDb) {
 
     }
 
-    async function update() {
-
+    async function update(filter, todoItemSet) {
+        const db = await makeDb();
+        const updated = await db.updateOne(filter, todoItemSet);
+        return updated;
     }
 
 
