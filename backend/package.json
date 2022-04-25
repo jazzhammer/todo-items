@@ -8,11 +8,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node rha.js",
     "startdb": "mongod --dbpath ./data/db &",
-    "install": "chmod +x install; ./install"
+    "install": "chmod +x install; ./install",
+    "build-docker": "docker build -t todo-server:0.0.1 ."
   },
   "author": "TIO, abraham",
   "license": "private",
   "dependencies": {
-    "express": "^4.17.3"
-  }
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "sanitize": "^2.1.0"
+  },
+  "type": "module"
 }
