@@ -4,7 +4,9 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import sanitize from 'sanitize';
 import {
-    postTodoItem
+    postTodoItem,
+    getTodoItems,
+    deleteTodoItem
 } from './todo-item/controllers/index.js';
 import makeCallback from './todo-item/express-callback/index.js';
 
@@ -14,8 +16,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(sanitize.middleware);
 // REST for todoItems
+app.get(`${apiRoot}`, makeCallback(getTodoItems));
 app.post(`${apiRoot}`, makeCallback(postTodoItem));
-
+app.delete(`${apiRoot}/:id`, makeCallback(deleteTodoItem));
 
 // REST for all other todoWhatevers
 //app.post(`${apiRoot}/whatever`, makeCallback(postTodoWhatever()));

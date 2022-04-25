@@ -11,8 +11,11 @@ export default function makeTodoItemsDb(makeDb) {
     async function findAll() {
         const db = await makeDb();
         const query = {};
-        const result = db.find(query);
-        return result.toArray();
+        const founds = await db.find(query).toArray();
+        founds.forEach((item) => {
+            delete item._id;
+        });
+        return founds;
     }
 
     async function findById(sourceId) {
@@ -29,7 +32,9 @@ export default function makeTodoItemsDb(makeDb) {
         return one;
     }
 
-    async function remove() {
+    async function remove(todoItemId) {
+        const db = await makeDb();
+        await db.deleteOne({id: todoItemId});
 
     }
 

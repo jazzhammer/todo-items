@@ -6,7 +6,7 @@ export default function makePostTodoItem(createTodoItem) {
                 'Content-Type': 'application/json'
             },
             statusCode: 201,
-            body: {posted}
+            body: posted
         }
     }
 }
