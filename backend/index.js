@@ -16,6 +16,13 @@ const apiPort = process.env.API_PORT;
 const app = express();
 app.use(bodyParser.json());
 app.use(sanitize.middleware);
+
+// happiness, things look ok
+// consider link to api documentation here
+app.get(`/`, (req, res) => {
+    res.send('todo-item service 0.0.1');
+});
+
 // REST for todoItems
 app.get(`${apiRoot}`, makeCallback(getTodoItems));
 app.post(`${apiRoot}`, makeCallback(postTodoItem));
@@ -33,5 +40,6 @@ app.use((req, res, next) => {
         error: 'Not found'
     });
 })
-
+console.log(`todo-server listening on ${apiPort}`);
 app.listen(apiPort, () => {});
+console.log(`to be sure, you could navigate to http://localhost:3001`);

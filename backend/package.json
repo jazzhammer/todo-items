@@ -1,15 +1,16 @@
 {
-  "name": "rh-exercise-be",
+  "name": "todo-items",
   "version": "0.0.1",
   "private": true,
   "description": "tech assess ratehub",
-  "main": "rha.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node rha.js",
+    "start": "node index.js",
     "startdb": "mongod --dbpath ./data/db &",
     "install": "chmod +x install; ./install",
-    "build-docker": "docker build -t todo-server:0.0.1 ."
+    "build-docker": "docker build -t todo-server:0.0.1 .",
+    "run-docker": "docker run -d -p 3001:3001 todo-server:0.0.1"
   },
   "author": "TIO, abraham",
   "license": "private",

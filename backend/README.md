@@ -11,10 +11,12 @@
 
 1. start mongodb with <pre><code>npm run startdb</code></pre>  this will leave mongodb running until you stop it. 
 2. start todo backend with <pre><code>npm start</code></pre> this runs rha.js.
-3. test startup by navigating to http://localhost:3001. expect to see a page with: <pre>TODO service &lt;version&gt;</pre>
+3. test startup by navigating to http://localhost:3001. expect to see a page with: <pre>todo-item service &lt;version&gt;</pre>
 
 ## How to build and run docker container
 
-1. docker build -t <imagename>
-2. docker run -d -p 3001:3001 <imagename>
+1. docker build -t &lt;imagename&gt; .
+2. docker run -d -p 3001:3001 &lt;imagename&gt;
 
+for the default docker build: 
+<pre><code>npm run build-docker</code></pre>
